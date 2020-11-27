@@ -1,0 +1,8 @@
+bean\TimeRangeBean.class
+SpringMvcJacksonSupportTest.class
+bean\MpSvcFlashGroupPositionSaveRequestBean.class
+bean\MpSvcFlashGroupInfoBean.class
+bean\MpSvcFlashGroupPositionInfoBean.class
+SpringMvcJacksonSupportTest$SimpleHttpOutputMessage.class
+SpringMvcJacksonSupportTest$SimpleHttpInputMessage.class
+bean\PositionRefActivityTypeEnum.class
