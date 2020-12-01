@@ -14,6 +14,7 @@ import protobuf.factory.GeneralProtobufFactory;
 import protobuf.field.BaseFieldParser;
 import protobuf.field.BaseProtobufFieldParser;
 import protobuf.field.ListProtobufFieldParser;
+import protobuf.interceptor.ChainedSetterMethodInterceptor;
 import protobuf.interceptor.EnumValueOfMethodInterceptor;
 import protobuf.interceptor.ExtractFromMethodInterceptor;
 import protobuf.interceptor.ProtobufSourceAnnotationInterceptor;
@@ -36,7 +37,7 @@ public final class ProtobufBeanGenerator {
     }
 
     public ProtobufBeanGenerator(ConfigurationProperties properties) {
-        this.configuration = new Configuration.Default(properties);
+        this.configuration = new Default(properties);
         init();
     }
 
@@ -64,7 +65,8 @@ public final class ProtobufBeanGenerator {
             new ProtobufSourceAnnotationInterceptor(),
             new EnumValueOfMethodInterceptor(),
             new ExtractFromMethodInterceptor(configuration),
-            new ToProtobufMethodInterceptor(configuration)
+            new ToProtobufMethodInterceptor(configuration),
+            new ChainedSetterMethodInterceptor()
     );
 
     private void init(){
